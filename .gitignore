@@ -33,5 +33,5 @@
 
 #files
 .vs
-/POCSelenium/POCSelenium/bin
-/POCSelenium/POCSelenium/obj
+bin/
+obj/
