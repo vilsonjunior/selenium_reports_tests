@@ -205,6 +205,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Features\GitHubLogin.feature" />
+    <None Include="Features\GitHubVilson.feature" />
     <None Include="packages.config" />
     <None Include="specflow.json" />
   </ItemGroup>

@@ -20,25 +20,25 @@ namespace POCSelenium.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GitHub")]
-    [NUnit.Framework.CategoryAttribute("GitHub.Login")]
-    public partial class GitHubFeature
+    [NUnit.Framework.DescriptionAttribute("GitHub user vilsonjunior")]
+    [NUnit.Framework.CategoryAttribute("GitHub.vilsonjunior")]
+    public partial class GitHubUserVilsonjuniorFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "GitHub.Login"};
+                "GitHub.vilsonjunior"};
         
-#line 1 "GitHubLogin.feature"
+#line 1 "GitHubVilson.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "GitHub", null, ProgrammingLanguage.CSharp, new string[] {
-                        "GitHub.Login"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "GitHub user vilsonjunior", null, ProgrammingLanguage.CSharp, new string[] {
+                        "GitHub.vilsonjunior"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,11 +77,11 @@ namespace POCSelenium.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validar login no github com usuário e senha inválidos")]
-        public virtual void ValidarLoginNoGithubComUsuarioESenhaInvalidos()
+        [NUnit.Framework.DescriptionAttribute("Validar acesso ao github de usuário")]
+        public virtual void ValidarAcessoAoGithubDeUsuario()
         {
             string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar login no github com usuário e senha inválidos", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar acesso ao github de usuário", null, ((string[])(null)));
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -103,19 +103,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("que acesse a url \'https://github.com/login\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
+ testRunner.Given("que acesse a url \'https://github.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Dado ");
 #line hidden
 #line 6
- testRunner.When("preencher o campo \'login_field\' com \'usuario_teste\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+ testRunner.And("queira acessar o github do usuário \'vilsonjunior\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
 #line hidden
 #line 7
- testRunner.And("preencher o campo \'password\' com \'senha\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+ testRunner.When("exibir a aba \'Overview\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
 #line hidden
 #line 8
- testRunner.And("clicar no botão \'commit\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line hidden
-#line 9
- testRunner.Then("deve exibir a mensagem \'Incorrect username or password.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+ testRunner.Then("deve exibir o repositório \'SeleniumReportsTests\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
 #line hidden
             }
             this.ScenarioCleanup();

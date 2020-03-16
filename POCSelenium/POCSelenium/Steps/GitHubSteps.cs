@@ -45,5 +45,32 @@ namespace POCSelenium.Steps
             base.HighlightElement(element);
             Assert.AreEqual(texto, element.Text);            
         }
+
+
+        [Given(@"queira acessar o github do usuário '(.*)'")]
+        public void DadoQueiraAcessarOGithubDoUsuario(string usuario)
+        {
+            string url = _driver.Url;            
+            url = url.Insert(url.LastIndexOf("/") + 1, usuario);
+            _driver.Navigate().GoToUrl(url);            
+        }
+
+        [When(@"exibir a aba '(.*)'")]
+        public void QuandoExibirAAba(string aba)
+        {
+            var element = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath($"//a[contains(.,'{aba}')]")));
+            base.HighlightElement(element);
+
+        }
+
+        [Then(@"deve exibir o repositório '(.*)'")]
+        public void EntaoDeveExibirORepositorio(string repo)
+        {
+            var element = _driver.FindElement(By.XPath($"//span[contains(text(),'{repo}')]"));
+            Assert.IsTrue(element.Displayed);
+            base.HighlightElement(element);
+        }
+
+
     }
 }
