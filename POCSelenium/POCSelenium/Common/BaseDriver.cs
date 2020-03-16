@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
@@ -37,6 +38,9 @@ namespace POCSelenium.Common
                 var jsDriver = (IJavaScriptExecutor)_driver;
                 string highlightJavascript = @"arguments[0].setAttribute('style','background: orange; border: 2px solid blue;');";
                 jsDriver.ExecuteScript(highlightJavascript, new object[] { element });
+                Thread.Sleep(500);
+                jsDriver.ExecuteScript(@"arguments[0].setAttribute('style', arguments[1]);", element, "");
+                Thread.Sleep(500);
             }
         }
 

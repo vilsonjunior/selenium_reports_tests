@@ -24,7 +24,8 @@ namespace POCSelenium.Steps
         [When(@"preencher o campo '(.*)' com '(.*)'")]
         public void QuandoPreencherOCampoCom(string campo, string valor)
         {
-            var element = _driver.FindElement(By.Id(campo));
+            var element = 
+            _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(campo)));
             base.HighlightElement(element);
             element.SendKeys(valor);
         }
@@ -32,7 +33,7 @@ namespace POCSelenium.Steps
         [When(@"clicar no botão '(.*)'")]
         public void QuandoClicarNoBotao(string nomeBotao)
         {
-            var element = _driver.FindElement(By.XPath($"//input[@name='{nomeBotao}'])"));
+            var element = _driver.FindElement(By.XPath($"//input[@name='{nomeBotao}']"));
             base.HighlightElement(element);
             element.Click();
         }
@@ -40,9 +41,9 @@ namespace POCSelenium.Steps
         [Then(@"deve exibir a mensagem '(.*)'")]
         public void EntaoDeveExibirAMensagem(string texto)
         {
-            var element = _driver.FindElement(By.XPath($"//div[@id='js-flash-container'][contains(.,'{texto}')]"));
+            var element = _driver.FindElement(By.XPath($"//div[@id='js-flash-container']"));            
             base.HighlightElement(element);
-            Assert.Equals(element.Text, texto);
+            Assert.AreEqual(texto, element.Text);            
         }
     }
 }
