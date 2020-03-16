@@ -198,11 +198,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Features\GitHubLogin.feature" />
     <None Include="packages.config" />
+    <None Include="specflow.json" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
