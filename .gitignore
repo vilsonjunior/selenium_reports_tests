@@ -33,4 +33,5 @@
 
 #files
 .vs
-*/Debug
+bin/Debug
+obj/Debug
