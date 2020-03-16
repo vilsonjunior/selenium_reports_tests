@@ -12,7 +12,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace POCSelenium.Common
 {
-    class BaseDriver : IDisposable
+    public abstract class BaseDriver : IDisposable
     {
         protected IWebDriver _driver;
         protected WebDriverWait _wait;
